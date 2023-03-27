@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap"
+    rel="stylesheet" />
+
+    <base href="/">
+    <!-- CSS  -->
+    <link rel="stylesheet" href="assets/vendors/font_awesome-6pro/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-5.1.3/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/styles/css/main.css" />
+
+
+    <title>H&PARTNERS</title>
+</head>
+
+<body>
+    <main class="max">
+        <!-- MAIN PAGE - LOGO -->
+        <section id="main_page" class="d-block">
+            <div class="row">
+                <div class="col com-md-12 d-flex justify-content-center align-items-center" style="min-height: 740px;">
+                    <img src="assets/img/logo/H&PARTNERS.png" class="mx-auto" alt="H&Partners Logo">
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 1 - DASHBOARD -->
+        <section id="dashboard_page" class="container d-none">
+            <header class="py-4 text-center">
+                <img src="assets/img/logo/header-logo.png" alt="">
+            </header>
+
+            <div class="text-center mt-3">
+                <input type="text" name="search" id="search" class="form-control fs-16px text-dark"
+                    placeholder="코드를 입력해 주세요">
+            </div>
+
+            <div class="text-center mt-4">
+                <h6>원하시는 항목을 체크해 주세요</h6>
+                <div class="btn-grp text-center">
+                    <button type="button" class="btn btn-main border px-4 shadow-primary">개인</button>
+                    <button type="button" class="btn btn-main border px-4 shadow-primary">법인</button>
+                </div>
+            </div>
+
+            <div class=" mt-5">
+                <div class=" text-center">
+                    <div class="row gy-3 px-4 dash-btn-group justify-content-between">
+                        <div class="col-4 col-lg-4 card dash-btn shadow-primary">
+                            <div class="btn1">
+                                <img src="assets/img/icons/refund.png" class="mx-auto py-3" width="30" alt="">
+                                <p class="fs-11px">예상환급액 확인하기</p>
+                            </div>
+                        </div>
+                        <div class="col-4 col-lg-4 card dash-btn shadow-primary">
+                            <div class="btn2">
+                                <img src="assets/img/icons/history.png" class="mx-auto py-3" width="30" alt="">
+                                <p class="fs-11px">특관자 근무 내역 찾기</p>
+                            </div>
+                        </div>
+                        <div class="col-4 col-lg-4 card dash-btn shadow-primary">
+                            <div class="btn3">
+                                <img src="assets/img/icons/tax-refund.png" class="mx-auto py-3" width="30" alt="">
+                                <p class="fs-11px">법인세 납부이력 즉시 환급액 이월세액</p>
+                            </div>
+                        </div>
+                        <div class="col-4 col-lg-4 card dash-btn shadow-primary">
+                            <div class="btn4">
+                                <img src="assets/img/icons/consulting.png" class="mx-auto py-3" width="30" alt="">
+                                <p class="fs-11px">가지급금규모 컨설팅가능 영역확인</p>
+                            </div>
+                        </div>
+                        <div class="col-4 col-lg-4 card dash-btn shadow-primary">
+                            <div class="btn5">
+                                <img src="assets/img/icons/output-form.png" class="mx-auto py-3" width="30" alt="">
+                                <p class="fs-11px">양식용 출력 <br>서비스</p>
+                            </div>
+                        </div>
+                    </div> <!-- dash btn ends here -->
+                </div>
+            </div>
+
+            <div class="mt-5 position-relative py-4 px-2">
+                <button type="button" id="nextBtn" class="btn btn-outline-primary btn-lg w-100 shadow-primary">다음</button>
+            </div>
+        </section>
+
+        <!-- PAGE 2 - DASHBOARD with MODAL -->
+        <section id="dashboard2_page" class="container d-none">
+            <div class="mt-3 mb-5">
+                <button type="button" id="backBtn" class="btn btn-outline-primary border-white">
+                    <i class="fa-light fa-arrow-left"></i>
+                </button>
+            </div>
+
+            <div class="mt-4 px-2">
+                <div class="px-2 pb-3">
+                    <input type="text" class="form-control w-100 shadow-primary py-3" name="" id="" placeholder="대표자명을 입력해 주세요"
+                        value="대표자명을 입력해 주세요">
+                </div>
+                <div class="px-2 pb-3">
+                    <input type="text" class="form-control w-100 shadow-primary py-3" name="" id="" placeholder="상호명을 입력해 주세요"
+                        value="상호명을 입력해 주세요">
+                </div>
+
+                <div class="px-2 pb-3">
+                    <input type="text" class="form-control w-100 shadow-primary py-3" name="" id=""
+                        placeholder="대표자 연락처를 여백없이 입력해 주세요" value="대표자 연락처를 여백없이 입력해 주세요">
+                </div>
+            </div>
+
+            <div class="mt-5 bottom-100 mx-3 pt-5 px-2">
+                <button type="button"id="paymentModalBtn" class="paymentModal btn btn-outline-primary btn-lg w-100 shadow-primary"
+                    data-bs-toggle="modal" data-bs-target="#paymentModal">결제</button>
+            </div>
+
+
+            <!-- Dashboard2 Payment Modal -->
+            <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="px-2">
+                                <div class="row gy-3 py-2 border-bottom-dashed">
+                                    <div class="col-6 text-start fs-14px">예상환급액 확인하기</div>
+                                    <div class="col-6 text-end fs-14px fw-bold">200,000원</div>
+                                </div>
+                                <div class="row gy-3 py-2 border-bottom-dashed">
+                                    <div class="col-6 text-start fs-14px">특관자 근무 내역 찾기</div>
+                                    <div class="col-6 text-end fs-14px fw-bold">200,000원</div>
+                                </div>
+                                <div class="row gy-3 py-2 border-bottom-dashed">
+                                    <div class="col-6 text-start fs-14px">법인세 납부이력 <br>즉시 환급액 이월세액</div>
+                                    <div class="col-6 text-end fs-14px fw-bold">200,000원</div>
+                                </div>
+                                <div class="row gy-3 py-2 border-bottom-dashed">
+                                    <div class="col-6 text-start fs-14px">가지급금규모 <br>컨설팅가능 영억확인</div>
+                                    <div class="col-6 text-end fs-14px fw-bold">200,000원</div>
+                                </div>
+                                <div class="row gy-3 py-2 border-2 border-bottom">
+                                    <div class="col-6 text-start fs-14px">양식용 출력서비스</div>
+                                    <div class="col-6 text-end fs-14px fw-bold">200,000원</div>
+                                </div>
+                                <div class="row gy-3 py-2">
+                                    <div class="col-6 text-start fs-14px fw-bold">합계</div>
+                                    <div class="col-6 text-end fs-16px fw-bold text-primary">1,000,000원</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="modal-footer"> -->
+                        <div class="btn-group p-3 w-100">
+                            <button type="button" class="btn btn-outline-secondary rounded py-2 shadow-primary me-1"
+                                data-bs-dismiss="modal" aria-label="Close">취소</button>
+                            <button type="button" id="payBtn" data-bs-dismiss="modal" class="btn btn-primary rounded py-2 shadow-primary ms-1">결제</button>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 3 - PAYMENT -->
+        <section id="payment_page" class="container d-none">
+            <div class="mt-3 mb-5">
+                <button type="button" id="paybackBtn" class="btn btn-outline-primary border-white">
+                    <i class="fa-light fa-arrow-left"></i>
+                </button>
+            </div>
+
+            <div class="mt-4 mb-5 px-2 card shadow-primary text-center">
+                <p class="py-3">결제가 성공적으로 완료되었습니다!</p>
+            </div>
+
+            <div class="card p-3 m-3 shadow-primary">
+                <div class="p-2">
+                    <div class="row gy-3 py-2 border-1 border-bottom-dashed">
+                        <div class="col-6 text-start fs-13px">예상환급액 확인하기</div>
+                        <div class="col-6 text-end fs-13px fw-bold">200,000원</div>
+                    </div>
+                    <div class="row gy-3 py-2 border-1 border-bottom-dashed">
+                        <div class="col-6 text-start fs-13px">특관자 근무 내역 찾기</div>
+                        <div class="col-6 text-end fs-13px fw-bold">200,000원</div>
+                    </div>
+                    <div class="row gy-3 py-2 border-1 border-bottom-dashed">
+                        <div class="col-6 text-start fs-13px">법인세 납부이력 즉시 환급액 이월세액</div>
+                        <div class="col-6 text-end fs-13px fw-bold">200,000원</div>
+                    </div>
+                    <div class="row gy-3 py-2 border-1 border-bottom-dashed">
+                        <div class="col-6 text-start fs-13px">가지급금규모 컨설팅가능 영억확인</div>
+                        <div class="col-6 text-end fs-13px fw-bold">200,000원</div>
+                    </div>
+                    <div class="row gy-3 py-2 border-2 border-bottom">
+                        <div class="col-6 text-start fs-13px">양식용 출력서비스</div>
+                        <div class="col-6 text-end fs-13px fw-bold">200,000원</div>
+                    </div>
+                    <div class="row gy-3 py-2">
+                        <div class="col-6 text-start fw-bold">합계</div>
+                        <div class="col-6 text-end fs-20px fw-bold text-primary">1,000,000원</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-4 fixed-bottom mx-3 py-4 px-2">
+                <button type="button" id="checkBtn" class=" btn btn-primary btn-lg w-100 shadow-primary">확인</button>
+            </div>
+        </section>
+    </main>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/vendors/jquery-3.6.1/jquery.min.js"></script>
+    <!-- <script src="assets/vendors/DataTables-1.13.1/js/datatables.min.js"></script> -->
+    <script src="assets/vendors/bootstrap-5.1.3/js/bootstrap.bundle.js"></script>
+    <!-- <script src="assets/vendors/mustache-4.2.0/mustache.js"></script> -->
+
+    <script src="assets/javascripts/main.js"></script>
+
+</body>
+
+</html>
