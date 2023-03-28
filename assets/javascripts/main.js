@@ -1,10 +1,10 @@
 $(document).ready(function() {
-  setTimeout(function() {
-    $("#main_page").fadeOut(1000, function() {
-      $("#dashboard_page").slideUp(1000).addClass("d-block").removeClass("d-none");
-      $("#main_page").slideUp(1000).addClass("d-none").removeClass("d-block");
-    });
-  }, 3000);
+  // setTimeout(function() {
+  //   $("#main_page").fadeOut(1000, function() {
+  //     $("#dashboard_page").slideUp(1000).addClass("d-block").removeClass("d-none");
+  //     $("#main_page").slideUp(1000).addClass("d-none").removeClass("d-block");
+  //   });
+  // }, 3000);
 
 
   $("#nextBtn").click(function() {
