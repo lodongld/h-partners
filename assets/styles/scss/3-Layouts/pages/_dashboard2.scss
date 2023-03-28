@@ -1,6 +1,11 @@
 #dashboard2_page{
 
-
+    .required-asterisk {
+        top: -54px;
+        left: 0;
+        margin: 8px;
+        font-size: 18px;
+    }
 
     #paymentModalBtn{
         margin-top: calc(100% - 150px); 
