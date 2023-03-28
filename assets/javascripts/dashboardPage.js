@@ -3,13 +3,14 @@ class CustomSelect {
       this.originalSelect = originalSelect;
       this.customSelect = document.createElement("div");
       this.customSelect.classList.add("selectOption");
-  
+       
+
       this.originalSelect.querySelectorAll("option").forEach((optionElement) => {
 
         const itemElement = document.createElement("div");
 
-        itemElement.classList.add("select__item", "fs-11px", "d-flex", "flex-column", "align-items-center", "justify-content-center");
-
+        itemElement.classList.add("select__item", "fs-11px", "d-flex", "flex-column", "align-items-center", "justify-content-center", "col");
+        
         const imgElement = document.createElement("img");
         const index = Array.from(optionElement.parentNode.children).indexOf(optionElement);
 
