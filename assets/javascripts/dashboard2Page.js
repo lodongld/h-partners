@@ -8,7 +8,7 @@ function openPaymentModal() {
   // Get the selected options from the dashboard-select
   var selectedItems = $('#dashboard-select option:selected').map(function() {
     var name = $(this).attr('name');
-    var value = $(this).val();
+    var optionValue = $(this).val();
     var koreanName;
     switch(name) {
         case 'refund':
@@ -32,7 +32,7 @@ function openPaymentModal() {
     }
     return {
         name: name,
-        value: value,
+        value: optionValue,
         koreanName: koreanName
     };
   }).get();

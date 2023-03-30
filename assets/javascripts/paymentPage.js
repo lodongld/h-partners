@@ -61,34 +61,11 @@ function PaymentModal() {
     // console.log('template: ', template, 'rendered: ', rendered);
   }
 
-function clearSelections() {
-    // Clear all selected options in the dashboard-select
-    const originalSelect = document.querySelector("#dashboard-select");
-    const customSelect = originalSelect.nextElementSibling;
-  
-    // Remove the multiple attribute from the original select
-    originalSelect.removeAttribute("multiple");
-  
-    // Deselect all options in the custom select
-    customSelect.querySelectorAll(".select__item").forEach((el) => {
-      el.classList.remove("select__item--selected");
-      const imgElement = el.querySelector("img");
-      if (imgElement) {
-        const src = imgElement.getAttribute("src");
-        if (src.includes("-active")) {
-          imgElement.setAttribute("src", src.replace("-active", ""));
-        }
-      }
-    });
-  
-    // Clear all input boxes
-    $('#representative').val('');
-    $('#company').val('');
-    $('#contact').val('');
+  function clearSelections() {
+    // Refresh the page to reset all data
+    location.reload();
   }
   
-
-
   $('#checkBtn').on('click', function() {
     clearSelections();
     console.log('Clear All');
