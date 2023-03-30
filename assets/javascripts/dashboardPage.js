@@ -66,9 +66,11 @@ class CustomSelect {
       this.originalSelect.style.display = "none";
     }
 
+    // FUNCTION FOR SELECTING ITEM
     _select(itemElement) {
         const index = Array.from(this.customSelect.children).indexOf(itemElement);
         
+        // FUNCTION OF SELECT IS FOR SINGLE SELECTION
         if (!this.originalSelect.multiple) {
           this.customSelect.querySelectorAll(".select__item").forEach((el) => {
             el.classList.remove("select__item--selected");
@@ -83,6 +85,7 @@ class CustomSelect {
         this.originalSelect.querySelectorAll("option")[index].selected = true;
         itemElement.classList.add("select__item--selected");
         
+        //FUNCTION FOR CHANGING THE IMG SRC IF ITS ACTIVE OR INACTIVE
         const imgElement = itemElement.querySelector("img");
         if (imgElement) {
           const src = imgElement.getAttribute("src");
@@ -92,7 +95,8 @@ class CustomSelect {
         }
       }
       
-
+    
+    // FUNCTION FOR DESELECTING ITEM
       _deselect(itemElement) {
         const index = Array.from(this.customSelect.children).indexOf(itemElement);
       
@@ -142,12 +146,14 @@ class CustomSelect {
 
   });
 
-  
+  // FUNCTION FOR BUTTON "INDIVIDUAL" TO ENABLE MULTIPLE SELECTION
   $("#individual-option").on("click", function() {
     $("#dashboard-select").attr("multiple", true);
     console.log("multiple active");
   });
 
+
+  // FUNCTION FOR BUTTON "CORPORATION" TO ENABLE SINGLE SELECTION
   $("#corporation-option").click(function() {
     // Get the original select element and the custom select div
     const originalSelect = document.querySelector("#dashboard-select");
@@ -171,5 +177,30 @@ class CustomSelect {
     console.log('multiple attr is removed');
   });
 
-
+  $('#nextBtn').on('click', function() {
+    var menuSelected = [];
+    $('#dashboard-select option:selected').each(function() {
+      var name = $(this).attr('name');
+      var value = $(this).val();
+      var item = {};
+      item[name] = value;
+      menuSelected.push(item);
+    });
   
+    if (menuSelected.length === 0) {
+      console.log('Please select at least one item.');
+      return false;
+    } else {
+      $("#dashboard_page").fadeOut(500, function() {
+        $("#dashboard2_page").slideDown(500);
+        if ($("#dashboard2_page").hasClass("d-none")) {
+          $("#dashboard_page").addClass("d-none").removeClass("d-block");
+          $("#dashboard2_page").addClass("d-block").removeClass("d-none");
+        }
+      });
+    }
+  
+    console.log(menuSelected);
+  });
+  
+

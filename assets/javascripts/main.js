@@ -7,15 +7,15 @@ $(document).ready(function() {
   // }, 3000);
 
 
-  $("#nextBtn").click(function() {
-    $("#dashboard_page").fadeOut(500, function() {
-        $("#dashboard2_page").slideDown(500);
-        if ($("#dashboard2_page").hasClass("d-none")) {
-          $("#dashboard_page").addClass("d-none").removeClass("d-block");
-          $("#dashboard2_page").addClass("d-block").removeClass("d-none");
-        }
-      });
-  });
+  // $("#nextBtn").click(function() {
+  //   $("#dashboard_page").fadeOut(500, function() {
+  //       $("#dashboard2_page").slideDown(500);
+  //       if ($("#dashboard2_page").hasClass("d-none")) {
+  //         $("#dashboard_page").addClass("d-none").removeClass("d-block");
+  //         $("#dashboard2_page").addClass("d-block").removeClass("d-none");
+  //       }
+  //     });
+  // });
 
   $("#backBtn").click(function() {
     $("#dashboard2_page").fadeOut(500, function() {
