@@ -46,13 +46,11 @@
             <div class="text-center mt-4">
                 <h6>원하시는 항목을 체크해 주세요</h6>
                 <div class="btn-grp text-center">
-                    <input type="radio" class="btn-check" name="options-option" id="individual-option" checked
-                        autocomplete="off">
+                    <input type="radio" class="btn-check" name="category-option" id="individual-option" value="개인" checked>
                     <label class="btn btn-outline-warning shadow-primary text-dark border-0 px-4"
                         for="individual-option">개인</label>
 
-                    <input type="radio" class="btn-check" name="options-option" id="corporation-option"
-                        autocomplete="off">
+                    <input type="radio" class="btn-check" name="category-option" id="corporation-option" value="법인">
                     <label class="btn btn-outline-warning shadow-primary text-dark border-0 px-4"
                         for="corporation-option">법인</label>
                 </div>
@@ -145,8 +143,7 @@
                             <button type="button" id="closeBtn"
                                 class="btn btn-outline-secondary rounded py-2 shadow-primary me-1"
                                 data-bs-dismiss="modal" aria-label="Close">취소</button>
-                            <button type="button" id="payBtn" data-bs-dismiss="modal"
-                                class="btn btn-primary rounded py-2 shadow-primary ms-1">결제</button>
+                            <button type="button" id="payBtn" data-bs-dismiss="modal" class="btn btn-primary rounded py-2 shadow-primary ms-1">결제</button>
                         </div>
                     </div>
                 </div>
@@ -166,25 +163,31 @@
                 <p class="py-3">결제가 성공적으로 완료되었습니다!</p>
             </div>
 
-            <!-- Define the mustache template -->
-            <template id="paymentConfirmTemp">
-                <div class="px-2">
-                    {{#selectedItems}}
-                    <div class="row gy-3 py-2 border-bottom-dashed">
-                        <div class="col-6 text-start fs-14px">{{koreanName}}</div>
-                        <div class="col-6 text-end fs-14px fw-bold">{{value}}원</div>
-                    </div>
-                    {{/selectedItems}}
 
-                    <div class="row py-2 border-2 border-top">
-                        <div class="col-6 text-start fs-14px fw-bold">합계</div>
-                        <div class="col-6 text-end fs-16px fw-bold text-primary">{{total}}원</div>
-                    </div>
-                </div>
-            </template>
+            <div id="paymentPageCont" class="card p-3 m-3 shadow-primary">
 
-            <!-- Display the payment data using the mustache template -->
-            <div id="paymentContainer" class="card p-3 m-3 shadow-primary"></div>
+                <!-- Define the mustache template -->
+                <template id="paymentConfirmTemp">
+                    <div class="px-2">
+                        {{#selectedData}}
+                        <div class="row gy-3 py-2 border-bottom-dashed">
+                            <div class="col-6 text-start fs-14px">{{koreanName}}</div>
+                            <div class="col-6 text-end fs-14px fw-bold">{{value}}원</div>
+                        </div>
+                        {{/selectedData}}
+
+                        <div class="row py-2 border-2 border-top">
+                            <div class="col-6 text-start fs-14px fw-bold">합계</div>
+                            <div class="col-6 text-end fs-16px fw-bold text-primary">{{paytotal}}원</div>
+                        </div>
+                    </div>
+                </template>
+
+                <!-- Display the payment data using the mustache template -->
+
+
+
+            </div>
 
             <div class="mt-4 fixed-bottom mx-3 py-4 px-2">
                 <button type="button" id="checkBtn" class=" btn btn-primary btn-lg w-100 shadow-primary">확인</button>

@@ -3,6 +3,8 @@ function openPaymentModal() {
   let company = $('#company').val();
   let contact = $('#contact').val();
 
+  // Get the selected option
+  let categoryOption = $('input[name=category-option]:checked').val();
   // Get the selected options from the dashboard-select
   var selectedItems = $('#dashboard-select option:selected').map(function() {
     var name = $(this).attr('name');
@@ -39,6 +41,7 @@ function openPaymentModal() {
   let total = selectedItems.reduce((acc, item) => acc + parseInt(item.value), 0);
 
   let data = {
+    'categoryOption': categoryOption,
     'representative': representative,
     'company': company,
     'contact': contact,
@@ -72,14 +75,6 @@ $('#paymentModalBtn').on('click', function() {
   }
 });
 
-
-// $("#payBtn").click(function() {
-
-//   $("#dashboard2_page").fadeOut(500, function() {
-//       $("#payment_page").slideDown(500);
-//       if ($("#payment_page").hasClass("d-none")) {
-//         $("#dashboard2_page").addClass("d-none").removeClass("d-block");
-//         $("#payment_page").addClass("d-block").removeClass("d-none");
-//       }
-//     });
-// });
+$("#payBtn").click(function() {
+    
+});
