@@ -148,33 +148,35 @@ class CustomSelect {
 
   // FUNCTION FOR BUTTON "INDIVIDUAL" TO ENABLE MULTIPLE SELECTION
   $("#individual-option").on("click", function() {
-    $("#dashboard-select").attr("multiple", true);
-    console.log("multiple active");
+    // $("#dashboard-select").attr("multiple", true);
+    console.log("individual has been selected");
   });
 
 
   // FUNCTION FOR BUTTON "CORPORATION" TO ENABLE SINGLE SELECTION
   $("#corporation-option").click(function() {
-    // Get the original select element and the custom select div
-    const originalSelect = document.querySelector("#dashboard-select");
-    const customSelect = originalSelect.nextElementSibling;
+    
+    // // Get the original select element and the custom select div
+    // const originalSelect = document.querySelector("#dashboard-select");
+    // const customSelect = originalSelect.nextElementSibling;
   
-    // Remove the multiple attribute from the original select
-    originalSelect.removeAttribute("multiple");
+    // // Remove the multiple attribute from the original select
+    // originalSelect.removeAttribute("multiple");
   
-    // Deselect all options in the custom select
-    customSelect.querySelectorAll(".select__item").forEach((el) => {
-      el.classList.remove("select__item--selected");
-      const imgElement = el.querySelector("img");
-      if (imgElement) {
-        const src = imgElement.getAttribute("src");
-        if (src.includes("-active")) {
-          imgElement.setAttribute("src", src.replace("-active", ""));
-        }
-      }
-    });
+    // // Deselect all options in the custom select
+    // customSelect.querySelectorAll(".select__item").forEach((el) => {
+    //   el.classList.remove("select__item--selected");
+    //   const imgElement = el.querySelector("img");
+    //   if (imgElement) {
+    //     const src = imgElement.getAttribute("src");
+    //     if (src.includes("-active")) {
+    //       imgElement.setAttribute("src", src.replace("-active", ""));
+    //     }
+    //   }
+    // });
   
-    console.log('multiple attr is removed');
+    // console.log('multiple attr is removed');
+    console.log("corporation has been selected");
   });
 
   $('#nextBtn').on('click', function() {

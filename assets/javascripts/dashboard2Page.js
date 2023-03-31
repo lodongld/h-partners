@@ -64,7 +64,8 @@ $('#paymentModalBtn').on('click', function() {
   let contact = $('#contact').val();
 
   // Check if representative and company input boxes are empty
-  if (!representative || !company ) { 
+  if (!representative || !company || !contact) { 
+    $('#alertModal').modal('show');
     console.log('Please fill in all required fields.'); 
     return; 
   }else{
@@ -75,6 +76,3 @@ $('#paymentModalBtn').on('click', function() {
   }
 });
 
-$("#payBtn").click(function() {
-    
-});

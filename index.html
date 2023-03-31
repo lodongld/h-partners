@@ -94,9 +94,9 @@
                     <span class="required-asterisk position-relative text-danger"> *</span>
                 </div>
                 <div class="px-2">
-                    <input type="text" class="form-control w-100 shadow-primary py-3" name="contact" id="contact"
+                    <input type="number" class="form-control w-100 shadow-primary py-3" name="contact" id="contact"
                         placeholder="대표자 연락처를 여백없이 입력해 주세요" value="">
-                    <!-- <span class="required-asterisk position-relative text-danger"> *</span> -->
+                    <span class="required-asterisk position-relative text-danger"> *</span>
                 </div>
             </div>
 
@@ -145,6 +145,22 @@
                                 data-bs-dismiss="modal" aria-label="Close">취소</button>
                             <button type="button" id="payBtn" data-bs-dismiss="modal" class="btn btn-primary rounded py-2 shadow-primary ms-1">결제</button>
                         </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- MODAL NOT CENTERED -->
+            <div class="modal  fade" id="alertModal" tabindex="-1" aria-labelledby="alertModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content ">
+                        <div class="modal-header alert-warning justify-content-center ">
+                        <h5 class="modal-title"><i class="fa-solid fa-triangle-exclamation"></i> 알리다! / Alert!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                            <div class="modal-body">
+                                <p class="fs-15px">모든 필수 필드를 별표로 작성하십시오. ("<span class="text-danger">*</span>")</p>
+                            </div>
                     </div>
                 </div>
             </div>
