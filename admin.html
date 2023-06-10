@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /> -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet" />
+
+    <base href="/">
+    <!-- CSS  -->
+    <link rel="stylesheet" href="assets/vendors/font_awesome-6pro/font-awesome.min.css" />
+    <link rel="stylesheet" href="assets/vendors/bootstrap-5.1.3/css/bootstrap.css" />
+    <link rel="stylesheet" href="assets/styles/css/main.css" />
+
+
+    <title>H&PARTNERS</title>
+</head>
+
+<body>
+    <main class="max">
+        <!-- MAIN PAGE - LOGO -->
+        <section id="main_page" class="d-none">
+            <div class="row">
+                <div class="col com-md-12 d-flex justify-content-center align-items-center" style="min-height: 740px;">
+                    <img src="assets/img/logo/H&PARTNERS.png" class="mx-auto" alt="H&Partners Logo">
+                </div>
+            </div>
+        </section>
+
+        <!-- PAGE 1 - DASHBOARD -->
+        <section id="dashboard_page" class="container d-block">
+            <header class="py-4 mt-2 text-center">
+                <img src="assets/img/logo/KOTAX-logo.png" alt="">
+            </header>
+
+            <div class="mt-4 px-2">
+                <div>
+                    <label class="fw-bolder" for="refund">예상환급액 확인하기</label>
+                    <input type="text" class="form-control w-100 shadow-primary py-3" name="refund" id="refund"
+                        placeholder="현재 200,000원" value="">
+                </div>
+                <div class="mt-4 ">
+                    <label class="fw-bolder" for="history">특관자 근무 내역 찾기</label>
+                    <input type="text" class="form-control w-100 shadow-primary py-3" name="history" id="history"
+                        placeholder="현재 200,000원" value="">
+                </div>
+                <div class="mt-4 ">
+                    <label class="fw-bolder" for="tax-refund">법인세 납부이력/즉시 환급액 이월세액</label>
+                    <input type="number" class="form-control w-100 shadow-primary py-3" name="tax-refund"
+                        id="tax-refund" placeholder="현재 200,000원" value="">
+                </div>
+                <div class="mt-4 ">
+                    <label class="fw-bolder" for="consulting">가지급금규모 컨설팅 가능 영역 확인</label>
+                    <input type="text" class="form-control w-100 shadow-primary py-3" name="consulting" id="consulting"
+                        placeholder="현재 200,000원" value="">
+                </div>
+                <div class="mt-4 ">
+                    <label class="fw-bolder" for="output-form">양식용 출력 서비스</label>
+                    <input type="text" class="form-control w-100 shadow-primary py-3" name="output-form"
+                        id="output-form" placeholder="현재 200,000원" value="">
+                </div>
+                <div class="mt-4 ">
+                    <label class="fw-bolder" for="financial-statements">재무재표</label>
+                    <input type="number" class="form-control w-100 shadow-primary py-3" name="financial-statements"
+                        id="financial-statements" placeholder="현재 200,000원" value="">
+                </div>
+
+            </div>
+            <div class="btn-group fixed-bottom mx-3 py-5">
+                <button type="button" id="closeBtn"
+                    class="btn btn-secondary btn-md rounded py-2 shadow-primary me-1">취소</button>
+                <button type="button" id="checkBtn"
+                    class="btn btn-primary btn-md rounded py-2 shadow-primary ms-1">확인</button>
+            </div>
+        </section>
+
+    </main>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="assets/vendors/jquery-3.6.1/jquery.min.js"></script>
+    <!-- <script src="assets/vendors/DataTables-1.13.1/js/datatables.min.js"></script> -->
+    <script src="assets/vendors/bootstrap-5.1.3/js/bootstrap.bundle.js"></script>
+    <script src="assets/vendors/mustache-4.2.0/mustache.js"></script>
+
+    <script src="assets/javascripts/main.js"></script>
+    <script src="assets/javascripts/dashboardPage.js"></script>
+    <script src="assets/javascripts/dashboard2Page.js"></script>
+    <script src="assets/javascripts/paymentPage.js"></script>
+
+</body>
+
+</html>

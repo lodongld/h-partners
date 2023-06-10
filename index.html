@@ -34,19 +34,25 @@
 
         <!-- PAGE 1 - DASHBOARD -->
         <section id="dashboard_page" class="container d-block">
-            <header class="py-4 text-center">
-                <img src="assets/img/logo/header-logo.png" alt="">
+            <header class="py-4 mt-2 text-center">
+                <img src="assets/img/logo/KOTAX-logo.png" alt="">
             </header>
 
-            <div class="text-center mt-4">
-                <input type="text" name="search" id="search" class="form-control fs-16px text-dark"
+            <!-- <div class="">
+                <input type="text" name="inputCode" id="inputCode" class="form-control fs-16px text-dark"
+                    placeholder="코드를 입력해 주세요">
+                <span class="required-asterisk position-relative text-danger"> *</span> -->
+
+            <div class="mt-4">
+                <input type="text" name="inputCode" id="inputCode" class="form-control w-100 fs-16px text-dark"
                     placeholder="코드를 입력해 주세요">
             </div>
 
             <div class="text-center mt-4">
                 <h6>원하시는 항목을 체크해 주세요</h6>
                 <div class="btn-grp text-center">
-                    <input type="radio" class="btn-check" name="category-option" id="individual-option" value="개인" checked>
+                    <input type="radio" class="btn-check" name="category-option" id="individual-option" value="개인"
+                        checked>
                     <label class="btn btn-outline-warning shadow-primary text-dark border-0 px-4"
                         for="individual-option">개인</label>
 
@@ -59,12 +65,88 @@
             <div class="text-center mt-4">
                 <div class="dash-btn-grp">
                     <select name="dashboard-select" id="dashboard-select" class="custom-select" multiple>
-                        <option name="refund" value="100000">예상환급액 확인하기</option>
-                        <option name="history" value="200000">특관자 근무 내역 찾기</option>
-                        <option name="tax-refund" value="300000">법인세 납부이력 즉시 환급액 이월세액</option>
-                        <option name="consulting" value="400000">가지급금규모 컨설팅가능 영역확인</option>
-                        <option name="output-form" value="500000">양식용 출력 서비스</option>
+                        <option name="refund" value="990">예상환급액 확인하기</option>
+                        <option name="history" value="990">특관자 근무 내역 찾기</option>
+                        <option name="tax-refund" value="990">법인세 납부이력 즉시 환급액 이월세액</option>
+                        <option name="consulting" value="990">가지급금규모 컨설팅가능 영역확인</option>
+                        <option name="output-form" value="990">양식용 출력 서비스</option>
+                        <option name="financial-statements" data-bs-toggle="modal"
+                            data-bs-target="#financialStatements">재무재표
+                        </option>
                     </select>
+                </div>
+            </div>
+
+            <!-- Financial Statements Modal -->
+            <div class="modal fade" id="financialStatements" data-bs-backdrop="static" data-bs-keyboard="false"
+                tabindex="-1" aria-labelledby="financialStatementsLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-body">
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" name="salesInformation" value="990"
+                                    id="salesInformation">
+                                <label class="form-check-label" for="salesInformation">
+                                    매출 3~5년
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" name="partyShareholder" value="990"
+                                    id="partyShareholder">
+                                <label class="form-check-label" for="partyShareholder">
+                                    특수관계자 주주정보
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" name="netIncome" value="990"
+                                    id="netIncome">
+                                <label class="form-check-label" for="netIncome">
+                                    당기순이익 3~5년
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" name="operatingProfit" value="990"
+                                    id="operatingProfit">
+                                <label class="form-check-label" for="operatingProfit">
+                                    영업이익 3~5년
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" name="retainedEarnings" value="990"
+                                    id="retainedEarnings">
+                                <label class="form-check-label" for="retainedEarnings">
+                                    미처분이익 잉여금 3~5년
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" name="tradeReceivables" value="990"
+                                    id="tradeReceivables">
+                                <label class="form-check-label" for="tradeReceivables">
+                                    매출채권 3~5년
+                                </label>
+                            </div>
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" name="suspensionPayment" value="990"
+                                    id="suspensionPayment">
+                                <label class="form-check-label" for="suspensionPayment">
+                                    가지급금 3~5년
+                                </label>
+                            </div>
+
+                            <div class="form-check mb-3">
+                                <input class="form-check-input" type="checkbox" name="suspensionPayment" value="1990"
+                                    id="suspensionPayment">
+                                <label class="form-check-label" for="provisionPayment">
+                                    가지급금3~5년
+                                </label>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+                            <button type="button" id="confirmFinancialStatementsBtn"
+                                class="btn btn-primary btn-lg d-block w-100" data-bs-dismiss="modal">확인</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -83,29 +165,28 @@
             </div>
 
             <div class="mt-4 px-2">
-                <div class="px-2">
-                    <input type="text" class="form-control w-100 shadow-primary py-3" name="representative"
-                        id="representative" placeholder="대표자명을 입력해 주세요" value="">
-                    <span class="required-asterisk position-relative text-danger"> *</span>
-                </div>
-                <div class="px-2">
-                    <input type="text" class="form-control w-100 shadow-primary py-3" name="company" id="company"
-                        placeholder="상호명을 입력해 주세요" value="">
-                    <span class="required-asterisk position-relative text-danger"> *</span>
-                </div>
-                <div class="px-2">
-                    <input type="number" class="form-control w-100 shadow-primary py-3" name="contact" id="contact"
-                        placeholder="대표자 연락처를 여백없이 입력해 주세요" value="">
-                    <span class="required-asterisk position-relative text-danger"> *</span>
-                </div>
+                <h4 class="fw-bolder">코드 : <span id="spanCode"></span> </h3>
+                    <div class="px-2">
+                        <input type="text" class="form-control w-100 shadow-primary py-3" name="representative"
+                            id="representative" placeholder="대표자명을 입력해 주세요" value="">
+                        <span class="required-asterisk position-relative text-danger"> *</span>
+                    </div>
+                    <div class="px-2">
+                        <input type="text" class="form-control w-100 shadow-primary py-3" name="company" id="company"
+                            placeholder="상호명을 입력해 주세요" value="">
+                        <span class="required-asterisk position-relative text-danger"> *</span>
+                    </div>
+                    <div class="px-2">
+                        <input type="number" class="form-control w-100 shadow-primary py-3" name="contact" id="contact"
+                            placeholder="대표자 연락처를 여백없이 입력해 주세요" value="">
+                        <!-- <span class="required-asterisk position-relative text-danger"> *</span> -->
+                    </div>
             </div>
 
             <div class="mt-5 fixed-bottom mx-3 py-5 px-2">
                 <button type="button" id="paymentModalBtn"
                     class="paymentModal btn btn-outline-primary btn-lg w-100 shadow-primary">결제</button>
             </div>
-
-
 
             <template id="paymentModalTemp">
                 <div class="modal-body">
@@ -124,8 +205,6 @@
                         </div>
                     </div>
                 </div>
-
-
             </template>
 
 
@@ -143,7 +222,8 @@
                             <button type="button" id="closeBtn"
                                 class="btn btn-outline-secondary rounded py-2 shadow-primary me-1"
                                 data-bs-dismiss="modal" aria-label="Close">취소</button>
-                            <button type="button" id="payBtn" data-bs-dismiss="modal" class="btn btn-primary rounded py-2 shadow-primary ms-1">결제</button>
+                            <button type="button" id="payBtn" data-bs-dismiss="modal"
+                                class="btn btn-primary rounded py-2 shadow-primary ms-1">결제</button>
                         </div>
                     </div>
                 </div>
@@ -155,12 +235,12 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content ">
                         <div class="modal-header alert-warning justify-content-center ">
-                        <h5 class="modal-title"><i class="fa-solid fa-triangle-exclamation"></i> 알리다! / Alert!</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            <h5 class="modal-title"><i class="fa-solid fa-triangle-exclamation"></i> 알리다! / Alert!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
-                            <div class="modal-body">
-                                <p class="fs-15px">모든 필수 필드를 별표로 작성하십시오. ("<span class="text-danger">*</span>")</p>
-                            </div>
+                        <div class="modal-body">
+                            <p class="fs-15px">모든 필수 필드를 별표로 작성하십시오. ("<span class="text-danger">*</span>")</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -200,8 +280,6 @@
                 </template>
 
                 <!-- Display the payment data using the mustache template -->
-
-
 
             </div>
 
